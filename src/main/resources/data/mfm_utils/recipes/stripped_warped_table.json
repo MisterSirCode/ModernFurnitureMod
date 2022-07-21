@@ -1,20 +1,19 @@
 {
     "type": "minecraft:crafting_shaped",
     "pattern": [
-        "LL ",
-        "SS ",
-        "   "
+        "LL",
+        "SS"
     ],
     "key": {
         "L": {
-            "tag": "minecraft:birch_log"
+            "item": "minecraft:stripped_warped_stem"
         },
         "S": {
-            "tag":  "minecraft:stick"
+            "item": "minecraft:stick"
         }
     },
     "result": {
-        "item": "mhm_utils:birch_table",
+        "item": "mfm_utils:stripped_warped_table",
         "count": 1
     }
 }

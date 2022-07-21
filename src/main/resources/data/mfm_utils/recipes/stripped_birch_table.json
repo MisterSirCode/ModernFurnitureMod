@@ -1,20 +1,19 @@
 {
     "type": "minecraft:crafting_shaped",
     "pattern": [
-        "LL ",
-        "SS ",
-        "   "
+        "LL",
+        "SS"
     ],
     "key": {
         "L": {
-            "tag": "minecraft:spruce_log"
+            "item": "minecraft:stripped_birch_log"
         },
         "S": {
-            "tag":  "minecraft:stick"
+            "item": "minecraft:stick"
         }
     },
     "result": {
-        "item": "mhm_utils:spruce_table",
+        "item": "mfm_utils:stripped_birch_table",
         "count": 1
     }
 }

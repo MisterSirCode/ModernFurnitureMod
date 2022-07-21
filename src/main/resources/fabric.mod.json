@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "id": "scmmhmutils",
-  "version": "1.0.0",
+  "id": "scmmfmutils",
+  "version": "1.1.0",
 
   "name": "MFM Utils",
   "description": "Simple furniture mod I wanted to make out of boredom",
@@ -9,13 +9,13 @@
     "SirCode"
   ],
   "contact": {
-    "homepage": "https://www.curseforge.com/minecraft/mc-mods/modern-furniture-mod-mhm-utilities",
+    "homepage": "https://www.curseforge.com/minecraft/mc-mods/modern-furniture-mod-mfm-utilities",
     "issues": "https://github.com/MisterSirCode/ModernFurnitureMod/issues",
     "sources": "https://github.com/MisterSirCode/ModernFurnitureMod"
   },
 
   "license": "CC0-1.0",
-  "icon": "assets/scmmhmutils/icon.png",
+  "icon": "assets/scmmfmutils/icon.png",
 
   "environment": "*",
   "entrypoints": {
@@ -23,9 +23,6 @@
       "net.fabricmc.scmods.MFMUtils"
     ]
   },
-  "mixins": [
-    "scmmhmutils.mixins.json"
-  ],
 
   "depends": {
     "fabricloader": ">=0.14.6",

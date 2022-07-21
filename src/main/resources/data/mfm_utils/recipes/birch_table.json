@@ -1,20 +1,19 @@
 {
     "type": "minecraft:crafting_shaped",
     "pattern": [
-        "LL ",
-        "SS ",
-        "   "
+        "LL",
+        "SS"
     ],
     "key": {
         "L": {
-            "tag": "minecraft:oak_log"
+            "item": "minecraft:birch_log"
         },
         "S": {
-            "tag":  "minecraft:stick"
+            "item": "minecraft:stick"
         }
     },
     "result": {
-        "item": "mhm_utils:oak_table",
+        "item": "mfm_utils:birch_table",
         "count": 1
     }
 }

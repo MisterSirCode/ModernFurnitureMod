@@ -1,20 +1,19 @@
 {
     "type": "minecraft:crafting_shaped",
     "pattern": [
-        "LL ",
-        "SS ",
-        "   "
+        "LL",
+        "SS"
     ],
     "key": {
         "L": {
-            "tag": "minecraft:mangrove_log"
+            "item": "minecraft:jungle_log"
         },
         "S": {
-            "tag":  "minecraft:stick"
+            "item": "minecraft:stick"
         }
     },
     "result": {
-        "item": "mhm_utils:mangrove_table",
+        "item": "mfm_utils:jungle_table",
         "count": 1
     }
 }
