@@ -12,11 +12,28 @@ import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class MFMUtils implements ModInitializer {
 	public static final Logger LOGGER = LoggerFactory.getLogger("modid");
+
+    public static final String woodLogs[] = {
+        "oak", "birch", "spruce", "jungle", "dark_oak", "acacia", "mangrove", "warped", "crimson"
+    };
+
+    public static final Block woodBlocks[] = {
+        OAK_PLANKS, BIRCH_PLANKS, SPRUCE_PLANKS, JUNGLE_PLANKS, DARK_OAK_PLANKS, ACACIA_PLANKS, MANGROVE_PLANKS, WARPED_PLANKS, CRIMSON_PLANKS
+    };
+
+    public static Map<String, Block> blockMap = new HashMap<String, Block>();S
+    for (int i = 0; i < woodLogs.length; i++) {
+
+    }
+
 
 	//public static final Item fuel = new Item(new FabricItemSettings().group(ItemGroup.MISC));
     public static final Block oak_table = new Block(FabricBlockSettings.of(Material.WOOD, Blocks.OAK_PLANKS.getDefaultMapColor())
