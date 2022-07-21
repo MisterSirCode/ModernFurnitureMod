@@ -55,7 +55,7 @@ public class MFMUtils implements ModInitializer {
             String currentTableName = woodLogs[i] + "_table";
             Registry.register(Registry.BLOCK, new Identifier("mfm_utils", currentTableName), woodTables.get(i));
             Registry.register(Registry.ITEM, new Identifier("mfm_utils", currentTableName), 
-                new BlockItem(woodTables.get(i), new FabricItemSettings().group(ItemGroup.MISC)));
+                new BlockItem(woodTables.get(i), new FabricItemSettings().group(ItemGroup.DECORATIONS)));
         }
 
         // Add Stripped Tables
@@ -63,7 +63,7 @@ public class MFMUtils implements ModInitializer {
             String currentTableName = strippedLogs[i] + "_table";
             Registry.register(Registry.BLOCK, new Identifier("mfm_utils", currentTableName), strippedTables.get(i));
             Registry.register(Registry.ITEM, new Identifier("mfm_utils", currentTableName), 
-                new BlockItem(strippedTables.get(i), new FabricItemSettings().group(ItemGroup.MISC)));
+                new BlockItem(strippedTables.get(i), new FabricItemSettings().group(ItemGroup.DECORATIONS)));
         }
     }
 }
