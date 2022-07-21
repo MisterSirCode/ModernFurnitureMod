@@ -1,5 +1,5 @@
 {
-    "parent": "mfm_utils:block/table",
+    "parent": "mfm_utils:item/table",
     "textures": {
         "top": "minecraft:block/jungle_log_top",
         "sides": "minecraft:block/jungle_log"
