@@ -1,0 +1,7 @@
+{
+    "parent": "mfm_utils:item/table",
+    "textures": {
+        "top": "minecraft:block/crimson_stem_top",
+        "sides": "minecraft:block/crimson_stem"
+    }
+}

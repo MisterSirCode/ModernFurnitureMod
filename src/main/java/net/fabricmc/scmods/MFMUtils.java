@@ -19,13 +19,24 @@ public class MFMUtils implements ModInitializer {
 	public static final Logger LOGGER = LoggerFactory.getLogger("modid");
 
 	//public static final Item fuel = new Item(new FabricItemSettings().group(ItemGroup.MISC));
-    public static final Block oak_table = new Block(FabricBlockSettings.of(Material.WOOD, Blocks.OAK_PLANKS.getDefaultMapColor()).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD).nonOpaque());
-    public static final Block birch_table = new Block(FabricBlockSettings.of(Material.WOOD, Blocks.BIRCH_PLANKS.getDefaultMapColor()).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD).nonOpaque());
-    public static final Block spruce_table = new Block(FabricBlockSettings.of(Material.WOOD, Blocks.SPRUCE_PLANKS.getDefaultMapColor()).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD).nonOpaque());
-    public static final Block jungle_table = new Block(FabricBlockSettings.of(Material.WOOD, Blocks.JUNGLE_PLANKS.getDefaultMapColor()).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD).nonOpaque());
-    public static final Block dark_oak_table = new Block(FabricBlockSettings.of(Material.WOOD, Blocks.DARK_OAK_PLANKS.getDefaultMapColor()).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD).nonOpaque());
-    public static final Block acacia_table = new Block(FabricBlockSettings.of(Material.WOOD, Blocks.ACACIA_PLANKS.getDefaultMapColor()).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD).nonOpaque());
-    public static final Block mangrove_table = new Block(FabricBlockSettings.of(Material.WOOD, Blocks.MANGROVE_PLANKS.getDefaultMapColor()).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD).nonOpaque());
+    public static final Block oak_table = new Block(FabricBlockSettings.of(Material.WOOD, Blocks.OAK_PLANKS.getDefaultMapColor())
+        .strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD).nonOpaque());
+    public static final Block birch_table = new Block(FabricBlockSettings.of(Material.WOOD, Blocks.BIRCH_PLANKS.getDefaultMapColor())
+        .strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD).nonOpaque());
+    public static final Block spruce_table = new Block(FabricBlockSettings.of(Material.WOOD, Blocks.SPRUCE_PLANKS.getDefaultMapColor())
+        .strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD).nonOpaque());
+    public static final Block jungle_table = new Block(FabricBlockSettings.of(Material.WOOD, Blocks.JUNGLE_PLANKS.getDefaultMapColor())
+        .strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD).nonOpaque());
+    public static final Block dark_oak_table = new Block(FabricBlockSettings.of(Material.WOOD, Blocks.DARK_OAK_PLANKS.getDefaultMapColor())
+        .strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD).nonOpaque());
+    public static final Block acacia_table = new Block(FabricBlockSettings.of(Material.WOOD, Blocks.ACACIA_PLANKS.getDefaultMapColor())
+        .strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD).nonOpaque());
+    public static final Block mangrove_table = new Block(FabricBlockSettings.of(Material.WOOD, Blocks.MANGROVE_PLANKS.getDefaultMapColor())
+        .strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD).nonOpaque());
+    public static final Block warped_table = new Block(FabricBlockSettings.of(Material.WOOD, Blocks.WARPED_PLANKS.getDefaultMapColor())
+        .strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD).nonOpaque());
+    public static final Block crimson_table = new Block(FabricBlockSettings.of(Material.WOOD, Blocks.CRIMSON_PLANKS.getDefaultMapColor())
+        .strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD).nonOpaque());
 
     @Override
     public void onInitialize() {
@@ -52,5 +63,11 @@ public class MFMUtils implements ModInitializer {
         Registry.register(Registry.BLOCK, new Identifier("mfm_utils", "mangrove_table"), mangrove_table);
         Registry.register(Registry.ITEM, new Identifier("mfm_utils", "mangrove_table"), 
             new BlockItem(mangrove_table, new FabricItemSettings().group(ItemGroup.MISC)));
+        Registry.register(Registry.BLOCK, new Identifier("mfm_utils", "warped_table"), warped_table);
+        Registry.register(Registry.ITEM, new Identifier("mfm_utils", "warped_table"), 
+            new BlockItem(warped_table, new FabricItemSettings().group(ItemGroup.MISC)));
+        Registry.register(Registry.BLOCK, new Identifier("mfm_utils", "crimson_table"), crimson_table);
+        Registry.register(Registry.ITEM, new Identifier("mfm_utils", "crimson_table"), 
+            new BlockItem(crimson_table, new FabricItemSettings().group(ItemGroup.MISC)));
     }
 }
