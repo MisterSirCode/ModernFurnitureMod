@@ -1,5 +1,5 @@
 {
     "variants": {
-        "": { "model": "sch_utils:block/oak_table" }
+        "": { "model": "mfm_utils:block/oak_table" }
     }
 }

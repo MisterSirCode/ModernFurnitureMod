@@ -3,7 +3,7 @@
   "id": "modid",
   "version": "${version}",
 
-  "name": "SCH Utils",
+  "name": "MFM Utils",
   "description": "This is an example description! Tell everyone what your mod is about!",
   "authors": [
     "Me!"
@@ -19,7 +19,7 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.fabricmc.example.SCHUtils"
+      "net.fabricmc.scmods.MFMUtils"
     ]
   },
   "mixins": [
