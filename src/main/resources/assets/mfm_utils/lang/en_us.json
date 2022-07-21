@@ -1,3 +1,20 @@
 {
-    "block.mfm_utils.oak_table": "Oak Table"
+    "block.mfm_utils.oak_table": "Oak Table",
+    "block.mfm_utils.birch_table": "Birch Table",
+    "block.mfm_utils.spruce_table": "Spruce Table",
+    "block.mfm_utils.jungle_table": "Jungle Table",
+    "block.mfm_utils.acacia_table": "Acacia Table",
+    "block.mfm_utils.dark_oak_table": "Dark Oak Table",
+    "block.mfm_utils.mangrove_table": "Mangrove Table",
+    "block.mfm_utils.warped_table": "Warped Table",
+    "block.mfm_utils.crimson_table": "Crimson Table",
+    "block.mfm_utils.stripped_oak_table": "Stripped Oak Table",
+    "block.mfm_utils.stripped_birch_table": "Stripped Birch Table",
+    "block.mfm_utils.stripped_spruce_table": "Stripped Spruce Table",
+    "block.mfm_utils.stripped_jungle_table": "Stripped Jungle Table",
+    "block.mfm_utils.stripped_acacia_table": "Stripped Acacia Table",
+    "block.mfm_utils.stripped_dark_oak_table": "Stripped Dark Oak Table",
+    "block.mfm_utils.stripped_mangrove_table": "Stripped Mangrove Table",
+    "block.mfm_utils.stripped_warped_table": "Stripped Warped Table",
+    "block.mfm_utils.stripped_crimson_table": "Stripped Crimson Table"
 }
