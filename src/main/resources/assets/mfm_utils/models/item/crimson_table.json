@@ -1,5 +1,5 @@
 {
-    "parent": "mfm_utils:item/table",
+    "parent": "mfm_utils:block/table",
     "textures": {
         "top": "minecraft:block/crimson_stem_top",
         "sides": "minecraft:block/crimson_stem"

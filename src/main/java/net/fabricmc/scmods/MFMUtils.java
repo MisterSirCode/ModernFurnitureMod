@@ -35,17 +35,17 @@ public class MFMUtils implements ModInitializer {
     };
 
     // Create Log Tables
-    public static Block[] woodTables;
+    public static ArrayList<Block> woodTables = new ArrayList<Block>();
     static { for (int i = 0; i < woodLogs.length; i++) {
-        woodTables[i] = new Block(FabricBlockSettings.of(Material.WOOD, woodBlocks[i].getDefaultMapColor())
-        .strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD).nonOpaque());
+        woodTables.add(new Block(FabricBlockSettings.of(Material.WOOD, woodBlocks[i].getDefaultMapColor())
+        .strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD).nonOpaque()));
     } };
 
     // Create Stripped Tables
-    public static Block[] strippedTables;
-    static { for (int i = 0; i < strippedLogs.length; i++) {
-        strippedTables[i] = new Block(FabricBlockSettings.of(Material.WOOD, woodBlocks[i].getDefaultMapColor())
-        .strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD).nonOpaque());
+    public static ArrayList<Block> strippedTables = new ArrayList<Block>();
+    static { for (int i = 0; i < woodLogs.length; i++) {
+        strippedTables.add(new Block(FabricBlockSettings.of(Material.WOOD, woodBlocks[i].getDefaultMapColor())
+        .strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD).nonOpaque()));
     } };
 
     @Override
@@ -53,17 +53,17 @@ public class MFMUtils implements ModInitializer {
         // Add Log Tables
         for (int i = 0; i < woodLogs.length; i++) {
             String currentTableName = woodLogs[i] + "_table";
-            Registry.register(Registry.BLOCK, new Identifier("mfm_utils", currentTableName), woodTables[i]);
+            Registry.register(Registry.BLOCK, new Identifier("mfm_utils", currentTableName), woodTables.get(i));
             Registry.register(Registry.ITEM, new Identifier("mfm_utils", currentTableName), 
-                new BlockItem(woodTables[i], new FabricItemSettings().group(ItemGroup.MISC)));
+                new BlockItem(woodTables.get(i), new FabricItemSettings().group(ItemGroup.MISC)));
         }
 
         // Add Stripped Tables
-        for (int i = 0; i < strippedTables.length; i++) {
+        for (int i = 0; i < woodLogs.length; i++) {
             String currentTableName = strippedLogs[i] + "_table";
-            Registry.register(Registry.BLOCK, new Identifier("mfm_utils", currentTableName), strippedTables[i]);
+            Registry.register(Registry.BLOCK, new Identifier("mfm_utils", currentTableName), strippedTables.get(i));
             Registry.register(Registry.ITEM, new Identifier("mfm_utils", currentTableName), 
-                new BlockItem(strippedTables[i], new FabricItemSettings().group(ItemGroup.MISC)));
+                new BlockItem(strippedTables.get(i), new FabricItemSettings().group(ItemGroup.MISC)));
         }
     }
 }
