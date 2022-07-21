@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "LL ",
+        "SS ",
+        "   "
+    ],
+    "key": {
+        "L": {
+            "tag": "minecraft:acacia_log"
+        },
+        "S": {
+            "tag":  "minecraft:stick"
+        }
+    },
+    "result": {
+        "item": "mhm_utils:acacia_table",
+        "count": 1
+    }
+}

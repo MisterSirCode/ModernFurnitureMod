@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "LL ",
+        "SS ",
+        "   "
+    ],
+    "key": {
+        "L": {
+            "tag": "minecraft:warped_stem"
+        },
+        "S": {
+            "tag":  "minecraft:stick"
+        }
+    },
+    "result": {
+        "item": "mhm_utils:warped_table",
+        "count": 1
+    }
+}

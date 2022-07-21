@@ -18,7 +18,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class MFMUtils implements ModInitializer {
-	public static final Logger LOGGER = LoggerFactory.getLogger("modid");
+	public static final Logger LOGGER = LoggerFactory.getLogger("scmmhmutils");
 
     public static final String woodLogs[] = {
         "oak", "birch", "spruce", "jungle", "dark_oak", "acacia", "mangrove", "warped", "crimson"

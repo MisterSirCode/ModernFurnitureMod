@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "LL ",
+        "SS ",
+        "   "
+    ],
+    "key": {
+        "L": {
+            "tag": "minecraft:spruce_log"
+        },
+        "S": {
+            "tag":  "minecraft:stick"
+        }
+    },
+    "result": {
+        "item": "mhm_utils:spruce_table",
+        "count": 1
+    }
+}
