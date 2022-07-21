@@ -35,24 +35,35 @@ public class MFMUtils implements ModInitializer {
     };
 
     // Create Log Tables
-    public static ArrayList<Block> woodTables = new ArrayList<Block>();
-    static {
-        for (int i = 0; i < woodLogs.length; i++) {
-            Block tableTemp = new Block(FabricBlockSettings.of(Material.WOOD, woodBlocks[i].getDefaultMapColor())
-            .strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD).nonOpaque());
-            woodTables.add(tableTemp);
-        }
-    };
+    public static Block[] woodTables;
+    static { for (int i = 0; i < woodLogs.length; i++) {
+        woodTables[i] = new Block(FabricBlockSettings.of(Material.WOOD, woodBlocks[i].getDefaultMapColor())
+        .strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD).nonOpaque());
+    } };
+
+    // Create Stripped Tables
+    public static Block[] strippedTables;
+    static { for (int i = 0; i < strippedLogs.length; i++) {
+        strippedTables[i] = new Block(FabricBlockSettings.of(Material.WOOD, woodBlocks[i].getDefaultMapColor())
+        .strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD).nonOpaque());
+    } };
 
     @Override
     public void onInitialize() {
         // Add Log Tables
         for (int i = 0; i < woodLogs.length; i++) {
-            Block currentTable = woodTables.get(i);
             String currentTableName = woodLogs[i] + "_table";
-            Registry.register(Registry.BLOCK, new Identifier("mfm_utils", currentTableName), currentTable);
+            Registry.register(Registry.BLOCK, new Identifier("mfm_utils", currentTableName), woodTables[i]);
             Registry.register(Registry.ITEM, new Identifier("mfm_utils", currentTableName), 
-                new BlockItem(currentTable, new FabricItemSettings().group(ItemGroup.MISC)));
+                new BlockItem(woodTables[i], new FabricItemSettings().group(ItemGroup.MISC)));
+        }
+
+        // Add Stripped Tables
+        for (int i = 0; i < strippedTables.length; i++) {
+            String currentTableName = strippedLogs[i] + "_table";
+            Registry.register(Registry.BLOCK, new Identifier("mfm_utils", currentTableName), strippedTables[i]);
+            Registry.register(Registry.ITEM, new Identifier("mfm_utils", currentTableName), 
+                new BlockItem(strippedTables[i], new FabricItemSettings().group(ItemGroup.MISC)));
         }
     }
 }
