@@ -1,0 +1,5 @@
+{
+    "variants": {
+        "": { "model": "mfm_utils:block/mangrove_table" }
+    }
+}
