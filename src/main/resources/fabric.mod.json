@@ -21,11 +21,11 @@
   "entrypoints": {
     "main": [
       "net.fabricmc.scmods.MFMUtils"
+    ],
+    "rrp:pregen": [
+      "net.fabricmc.scmods.AssetLoader"
     ]
   },
-  "mixins": [
-    "scmmfmutils.mixins.json"
-  ],
   "depends": {
     "fabricloader": ">=0.14.6",
     "fabric": "*",
