@@ -1,5 +1,5 @@
 package net.fabricmc.scmods;
-
+import net.fabricmc.Table;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
@@ -11,9 +11,7 @@ import net.minecraft.item.ItemGroup;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
-
 import java.util.ArrayList;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -37,14 +35,14 @@ public class MFMUtils implements ModInitializer {
     // Create Log Tables
     public static ArrayList<Block> woodTables = new ArrayList<Block>();
     static { for (int i = 0; i < woodLogs.length; i++) {
-        woodTables.add(new Block(FabricBlockSettings.of(Material.WOOD, woodBlocks[i].getDefaultMapColor())
+        woodTables.add(new Table(FabricBlockSettings.of(Material.WOOD, woodBlocks[i].getDefaultMapColor())
         .strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD).nonOpaque()));
     } };
 
     // Create Stripped Tables
     public static ArrayList<Block> strippedTables = new ArrayList<Block>();
     static { for (int i = 0; i < woodLogs.length; i++) {
-        strippedTables.add(new Block(FabricBlockSettings.of(Material.WOOD, woodBlocks[i].getDefaultMapColor())
+        strippedTables.add(new Table(FabricBlockSettings.of(Material.WOOD, woodBlocks[i].getDefaultMapColor())
         .strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD).nonOpaque()));
     } };
 
