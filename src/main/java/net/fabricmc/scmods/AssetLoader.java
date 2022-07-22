@@ -37,7 +37,7 @@ public class AssetLoader implements RRPPreGenEntrypoint {
             Boolean stem = false;
             if (bid.contains("warped") || bid.contains("crimson")) stem = true;
             byte[] data = createWoodModelJson("table", bid, stem).getBytes();
-            RESOURCE_PACK.addResource(ResourceType.CLIENT_RESOURCES, new Identifier("mfm_utils", "/block/" + bid + "_table"), data);
+            RESOURCE_PACK.addResource(ResourceType.CLIENT_RESOURCES, new Identifier("mfm_utils", "models/block/" + bid + "_table.json"), data);
         }
     }
 }
