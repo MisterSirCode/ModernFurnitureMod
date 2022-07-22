@@ -24,7 +24,7 @@
     ]
   },
   "mixins": [
-    "scmmhmutils.mixins.json"
+    "scmmfmutils.mixins.json"
   ],
   "depends": {
     "fabricloader": ">=0.14.6",
