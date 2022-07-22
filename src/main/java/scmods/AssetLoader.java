@@ -1,4 +1,4 @@
-package net.fabricmc.scmods;
+package scmods;
 
 import java.util.ArrayList;
 import net.devtech.arrp.api.RRPPreGenEntrypoint;
@@ -18,7 +18,7 @@ public class AssetLoader implements RRPPreGenEntrypoint {
     };
 
     // Model Generator for all my wood furnitures
-    public static String createWoodModelJson(String type, String id, Boolean stem) {
+    public static String createWoodModelJson(String type, String id, boolean stem) {
         if (stem == true) id += "_stem";
         else id += "_log";
         return "{\n" +
@@ -34,7 +34,7 @@ public class AssetLoader implements RRPPreGenEntrypoint {
         // Add everything to ARRP to load assets during runtimeS
         for (int i = 0; i < vanillaLogs.length - 1; i++) {
             String bid = vanillaLogs[i];
-            Boolean stem = false;
+            boolean stem = false;
             if (bid.contains("warped") || bid.contains("crimson")) stem = true;
             byte[] data = createWoodModelJson("table", bid, stem).getBytes();
             RESOURCE_PACK.addResource(ResourceType.CLIENT_RESOURCES, new Identifier("mfm_utils", "models/block/" + bid + "_table.json"), data);
