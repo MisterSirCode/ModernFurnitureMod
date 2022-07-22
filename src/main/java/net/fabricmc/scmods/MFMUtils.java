@@ -64,4 +64,15 @@ public class MFMUtils implements ModInitializer {
                 new BlockItem(strippedTables.get(i), new FabricItemSettings().group(ItemGroup.DECORATIONS)));
         }
     }
+
+    public static String createWoodModelJson(String type, String id, Boolean stem) {
+        if (stem == true) id += "_stem";
+        else id += "_log";
+        return "{\n" +
+                "    \"parent\": \"mfm_utils:block/" + type + ",\"\n" +
+                "    \"textures\": {\n" +
+                "        \"top\": \"minecraft:block/" + id + "_top\"," +
+                "        \"sides\": \"minecraft:block/" + id + "\"," +
+                "}";
+    }
 }
