@@ -28,5 +28,10 @@ public class AssetEntrypoint implements DataGeneratorEntrypoint {
                 blockStateModelGenerator.registerSimpleCubeAll(MFMUtils.woodTables.get(i));
             }
 		}
+
+		@Override
+		public void generateItemModels(ItemModelGenerator itemModelGenerator) {
+			
+		}
 	}
 }
