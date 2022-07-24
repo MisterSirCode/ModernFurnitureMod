@@ -1,5 +1,6 @@
 package net.scmods;
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
@@ -7,6 +8,7 @@ import net.minecraft.block.Blocks;
 import net.minecraft.block.Material;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.ItemGroup;
+import net.minecraft.item.ItemStack;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
@@ -37,6 +39,17 @@ public class MFMUtils implements ModInitializer {
         .strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD).nonOpaque()));
     } };
 
+    public static final ItemGroup MFM_GROUP = FabricItemGroupBuilder.create(new Identifier("scm_mfmutils", "mfmitemgroup"))
+        .icon(() -> new ItemStack(woodTables.get(6)))
+        .build();
+    
+    // new ItemGroup(13, "mfmutilsmod") {
+    //     @Override
+    //     public ItemStack createIcon() {
+    //         return new ItemStack(woodTables.get(6));
+    //     }
+    // }.setName("Modern Furniture Mod");
+
     @Override
     public void onInitialize() {
         // Add Furniture
@@ -44,11 +57,11 @@ public class MFMUtils implements ModInitializer {
             String currentTableName = vanillaLogs[i] + "_table";
             Registry.register(Registry.BLOCK, new Identifier("mfm_utils", currentTableName), woodTables.get(i));
             Registry.register(Registry.ITEM, new Identifier("mfm_utils", currentTableName), 
-                new BlockItem(woodTables.get(i), new FabricItemSettings().group(ItemGroup.DECORATIONS)));
+                new BlockItem(woodTables.get(i), new FabricItemSettings().group(MFM_GROUP)));
             String currentBenchName = vanillaLogs[i] + "_bench";
             Registry.register(Registry.BLOCK, new Identifier("mfm_utils", currentBenchName), woodBenches.get(i));
             Registry.register(Registry.ITEM, new Identifier("mfm_utils", currentBenchName), 
-                new BlockItem(woodBenches.get(i), new FabricItemSettings().group(ItemGroup.DECORATIONS)));
+                new BlockItem(woodBenches.get(i), new FabricItemSettings().group(MFM_GROUP)));
         }
     }
 }
