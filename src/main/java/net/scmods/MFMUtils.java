@@ -42,7 +42,7 @@ public class MFMUtils implements ModInitializer {
             Registry.register(Registry.BLOCK, new Identifier("mfm_utils", currentTableName), woodTables.get(i));
             Registry.register(Registry.ITEM, new Identifier("mfm_utils", currentTableName), 
                 new BlockItem(woodTables.get(i), new FabricItemSettings().group(ItemGroup.DECORATIONS)));
-            String currentBenchName = vanillaLogs[i] + "_table";
+            String currentBenchName = vanillaLogs[i] + "_bench";
             Registry.register(Registry.BLOCK, new Identifier("mfm_utils", currentBenchName), woodBenches.get(i));
             Registry.register(Registry.ITEM, new Identifier("mfm_utils", currentBenchName), 
                 new BlockItem(woodBenches.get(i), new FabricItemSettings().group(ItemGroup.DECORATIONS)));
