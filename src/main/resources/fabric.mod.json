@@ -21,9 +21,6 @@
   "entrypoints": {
     "main": [
       "net.scmods.MFMUtils"
-    ],
-    "fabric-datagen": [
-      "net.scmods.AssetEntrypoint"
     ]
   },
   "depends": {

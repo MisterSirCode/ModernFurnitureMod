@@ -1,5 +1,7 @@
 {
     "variants": {
-        "": { "model": "mfm_utils:block/stripped_birch_table" }
+        "": {
+            "model": "mfm_utils:block/stripped_birch_table"
+        }
     }
 }
