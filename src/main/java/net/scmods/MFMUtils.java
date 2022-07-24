@@ -15,22 +15,25 @@ import java.util.ArrayList;
 public class MFMUtils implements ModInitializer {
     public static final String vanillaLogs[] = {
         "oak", "birch", "spruce", "jungle", "dark_oak", "acacia", "mangrove", "warped", "crimson", 
-        "stripped_oak", "stripped_birch", "stripped_spruce", "stripped_jungle", "stripped_dark_oak", "stripped_acacia", 
-        "stripped_mangrove", "stripped_warped", "stripped_crimson"
+        "stripped_oak", "stripped_birch", "stripped_spruce", "stripped_jungle", "stripped_dark_oak",
+        "stripped_acacia", "stripped_mangrove", "stripped_warped", "stripped_crimson"
     };
 
     public static final Block woodBlocks[] = {
-        Blocks.OAK_PLANKS, Blocks.BIRCH_PLANKS, Blocks.SPRUCE_PLANKS, Blocks.JUNGLE_PLANKS, Blocks.DARK_OAK_PLANKS, 
-        Blocks.ACACIA_PLANKS, Blocks.MANGROVE_PLANKS, Blocks.WARPED_PLANKS, Blocks.CRIMSON_PLANKS
+        Blocks.OAK_LOG, Blocks.BIRCH_LOG, Blocks.SPRUCE_LOG, Blocks.JUNGLE_LOG, Blocks.DARK_OAK_LOG, 
+        Blocks.ACACIA_LOG, Blocks.MANGROVE_LOG, Blocks.WARPED_STEM, Blocks.CRIMSON_STEM, 
+        Blocks.STRIPPED_OAK_LOG, Blocks.STRIPPED_BIRCH_LOG, Blocks.STRIPPED_SPRUCE_LOG, 
+        Blocks.STRIPPED_JUNGLE_LOG, Blocks.STRIPPED_DARK_OAK_LOG, Blocks.STRIPPED_ACACIA_LOG, 
+        Blocks.STRIPPED_MANGROVE_LOG, Blocks.STRIPPED_WARPED_STEM, Blocks.STRIPPED_CRIMSON_STEM
     };
 
     // Create Furniture
     public static ArrayList<Block> woodTables = new ArrayList<Block>();
     public static ArrayList<Block> woodBenches = new ArrayList<Block>();
     static { for (int i = 0; i < vanillaLogs.length; i++) {
-        woodTables.add(new Table(FabricBlockSettings.of(Material.WOOD, woodBlocks[i % 9].getDefaultMapColor())
+        woodTables.add(new Table(FabricBlockSettings.of(Material.WOOD, woodBlocks[i].getDefaultMapColor())
         .strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD).nonOpaque()));
-        woodBenches.add(new Bench(FabricBlockSettings.of(Material.WOOD, woodBlocks[i % 9].getDefaultMapColor())
+        woodBenches.add(new Bench(FabricBlockSettings.of(Material.WOOD, woodBlocks[i].getDefaultMapColor())
         .strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD).nonOpaque()));
     } };
 
