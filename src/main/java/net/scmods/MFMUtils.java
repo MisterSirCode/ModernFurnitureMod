@@ -37,7 +37,6 @@ public class MFMUtils implements ModInitializer {
     public static ArrayList<ArrayList<Block>> typeLists = new ArrayList<ArrayList<Block>>();
 
     // Create Furniture
-    public static ArrayList<Block> woodTables = new ArrayList<Block>();
     static {
         for (int i = 0; i < furnitures.length; i++) {
             ArrayList<Block> tempBlocks = new ArrayList<Block>();
@@ -55,7 +54,7 @@ public class MFMUtils implements ModInitializer {
     }
 
     public static final ItemGroup MFM_GROUP = FabricItemGroupBuilder.create(new Identifier("mfm_utils", "mfmitemgroup"))
-        .icon(() -> new ItemStack(woodTables.get(6)))
+        .icon(() -> new ItemStack(typeLists.get(0).get(6)))
         .build();
 
     @Override
