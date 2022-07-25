@@ -34,21 +34,14 @@ public class MFMUtils implements ModInitializer {
     public static ArrayList<Block> woodBenches = new ArrayList<Block>();
     static { for (int i = 0; i < vanillaLogs.length; i++) {
         woodTables.add(new Table(FabricBlockSettings.of(Material.WOOD, woodBlocks[i].getDefaultMapColor())
-        .strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD).nonOpaque()));
+            .strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD).nonOpaque()));
         woodBenches.add(new Bench(FabricBlockSettings.of(Material.WOOD, woodBlocks[i].getDefaultMapColor())
-        .strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD).nonOpaque()));
+            .strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD).nonOpaque()));
     } };
 
-    public static final ItemGroup MFM_GROUP = FabricItemGroupBuilder.create(new Identifier("scm_mfmutils", "mfmitemgroup"))
+    public static final ItemGroup MFM_GROUP = FabricItemGroupBuilder.create(new Identifier("mfm_utils", "mfmitemgroup"))
         .icon(() -> new ItemStack(woodTables.get(6)))
         .build();
-    
-    // new ItemGroup(13, "mfmutilsmod") {
-    //     @Override
-    //     public ItemStack createIcon() {
-    //         return new ItemStack(woodTables.get(6));
-    //     }
-    // }.setName("Modern Furniture Mod");
 
     @Override
     public void onInitialize() {
