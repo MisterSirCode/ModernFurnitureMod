@@ -6,6 +6,7 @@ import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.Material;
+import net.minecraft.block.AbstractBlock.Settings;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
@@ -29,15 +30,29 @@ public class MFMUtils implements ModInitializer {
         Blocks.STRIPPED_MANGROVE_LOG, Blocks.STRIPPED_WARPED_STEM, Blocks.STRIPPED_CRIMSON_STEM
     };
 
+    public static final String furnitures[] = {
+        "table", "bench", "grate"
+    };
+
+    public static ArrayList<ArrayList<Block>> typeLists = new ArrayList<ArrayList<Block>>();
+
     // Create Furniture
     public static ArrayList<Block> woodTables = new ArrayList<Block>();
-    public static ArrayList<Block> woodBenches = new ArrayList<Block>();
-    static { for (int i = 0; i < vanillaLogs.length; i++) {
-        woodTables.add(new Table(FabricBlockSettings.of(Material.WOOD, woodBlocks[i].getDefaultMapColor())
-            .strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD).nonOpaque()));
-        woodBenches.add(new Bench(FabricBlockSettings.of(Material.WOOD, woodBlocks[i].getDefaultMapColor())
-            .strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD).nonOpaque()));
-    } };
+    static {
+        for (int i = 0; i < furnitures.length; i++) {
+            ArrayList<Block> tempBlocks = new ArrayList<Block>();
+            for (int j = 0; j < vanillaLogs.length; j++) {
+                Block block;
+                Settings blockSettings = FabricBlockSettings.of(Material.WOOD, woodBlocks[j].getDefaultMapColor())
+                    .strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD).nonOpaque();
+                if (i == 0) block = new Table(blockSettings);
+                else if (i == 1) block = new Bench(blockSettings);
+                else block = new Grate(blockSettings);
+                tempBlocks.add(block);
+            }
+            typeLists.add(tempBlocks);
+        }
+    }
 
     public static final ItemGroup MFM_GROUP = FabricItemGroupBuilder.create(new Identifier("mfm_utils", "mfmitemgroup"))
         .icon(() -> new ItemStack(woodTables.get(6)))
@@ -46,15 +61,14 @@ public class MFMUtils implements ModInitializer {
     @Override
     public void onInitialize() {
         // Add Furniture
-        for (int i = 0; i < vanillaLogs.length; i++) {
-            String currentTableName = vanillaLogs[i] + "_table";
-            Registry.register(Registry.BLOCK, new Identifier("mfm_utils", currentTableName), woodTables.get(i));
-            Registry.register(Registry.ITEM, new Identifier("mfm_utils", currentTableName), 
-                new BlockItem(woodTables.get(i), new FabricItemSettings().group(MFM_GROUP)));
-            String currentBenchName = vanillaLogs[i] + "_bench";
-            Registry.register(Registry.BLOCK, new Identifier("mfm_utils", currentBenchName), woodBenches.get(i));
-            Registry.register(Registry.ITEM, new Identifier("mfm_utils", currentBenchName), 
-                new BlockItem(woodBenches.get(i), new FabricItemSettings().group(MFM_GROUP)));
+        for (int i = 0; i < furnitures.length; i++) {
+            ArrayList<Block> tempBlocks = typeLists.get(i);
+            for (int j = 0; j < vanillaLogs.length; j++) {
+                String currentName = vanillaLogs[j] + "_" + furnitures[i];
+                Registry.register(Registry.BLOCK, new Identifier("mfm_utils", currentName), tempBlocks.get(j));
+                Registry.register(Registry.ITEM, new Identifier("mfm_utils", currentName), 
+                    new BlockItem(tempBlocks.get(j), new FabricItemSettings().group(MFM_GROUP)));
+            }
         }
     }
 }
