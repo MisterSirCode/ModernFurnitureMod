@@ -7,6 +7,7 @@ import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
 
 public class Grate extends MostlyEmptyBlock {
+    protected final VoxelShape outlineShape = VoxelShapes.fullCube();
     protected final VoxelShape collisionShape = VoxelShapes.union(VoxelShapes.union(VoxelShapes.union(
         VoxelShapes.cuboid(0.875, 0, 0, 1, 1, 0.875), 
         VoxelShapes.cuboid(0.125, 0, 0.875, 1, 1, 1)), 
@@ -19,7 +20,7 @@ public class Grate extends MostlyEmptyBlock {
 
     @Override
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
-        return collisionShape;
+        return outlineShape;
     }
 
     @Override
