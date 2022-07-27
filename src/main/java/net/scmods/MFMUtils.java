@@ -46,7 +46,8 @@ public class MFMUtils implements ModInitializer {
                     .strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD).nonOpaque();
                 if (i == 0) block = new Table(blockSettings);
                 else if (i == 1) block = new Bench(blockSettings);
-                else block = new Grate(blockSettings);
+                else if (i == 2) block = new Grate(blockSettings);
+                else block = new Box(blockSettings);
                 tempBlocks.add(block);
             }
             typeLists.add(tempBlocks);
