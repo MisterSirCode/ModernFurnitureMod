@@ -31,7 +31,7 @@ public class MFMUtils implements ModInitializer {
     };
 
     public static final String furnitures[] = {
-        "table", "bench", "grate"
+        "table", "bench", "grate", "box"
     };
 
     public static ArrayList<ArrayList<Block>> typeLists = new ArrayList<ArrayList<Block>>();
