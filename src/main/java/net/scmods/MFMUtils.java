@@ -3,6 +3,7 @@ import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.Material;
@@ -36,7 +37,8 @@ public class MFMUtils implements ModInitializer {
     };
 
     public static ArrayList<ArrayList<Block>> typeLists = new ArrayList<ArrayList<Block>>();
-    public static ArrayList<BlockEntityType<BoxBlockEntity>> BOX_ENTITY = new ArrayList<BlockEntityType<BoxBlockEntity>>();
+    //public static ArrayList<BlockEntityType<BoxBlockEntity>> BOX_ENTITY = new ArrayList<BlockEntityType<BoxBlockEntity>>();
+    public static BlockEntityType<BoxBlockEntity> BOX_ENTITY;
 
     // Create Furniture
     static {
@@ -62,6 +64,9 @@ public class MFMUtils implements ModInitializer {
 
     @Override
     public void onInitialize() {
+        BOX_ENTITY = Registry.register(Registry.BLOCK_ENTITY_TYPE, "mfm_utils:box_block_entity", 
+            FabricBlockEntityTypeBuilder.create(BoxBlockEntity::new, typeLists.get(2).get(0)).build(null));
+
         // Add Furniture
         for (int i = 0; i < furnitures.length; i++) {
             ArrayList<Block> tempBlocks = typeLists.get(i);
