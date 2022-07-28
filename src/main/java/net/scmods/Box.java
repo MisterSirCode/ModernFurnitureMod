@@ -25,12 +25,8 @@ import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.server.world.ServerWorld;
-import net.minecraft.stat.Stats;
-import net.minecraft.state.property.BooleanProperty;
-import net.minecraft.state.property.Properties;
 
 public class Box extends Block implements BlockEntityProvider {
-    public static final BooleanProperty OPEN = Properties.OPEN;
     protected final VoxelShape combinedShape = VoxelShapes.fullCube();
 
     public Box(Settings settings) {
@@ -55,7 +51,6 @@ public class Box extends Block implements BlockEntityProvider {
         BlockEntity blockEntity = world.getBlockEntity(pos);
         if (blockEntity instanceof BoxBlockEntity) {
             player.openHandledScreen((BoxBlockEntity)blockEntity);
-            player.incrementStat(Stats.OPEN_BARREL);
             PiglinBrain.onGuardedBlockInteracted(player, true);
         }
         return ActionResult.CONSUME;

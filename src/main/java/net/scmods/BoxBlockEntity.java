@@ -1,6 +1,5 @@
 package net.scmods;
 
-import net.minecraft.block.BarrelBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.ViewerCountManager;
@@ -18,7 +17,6 @@ import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.Text;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Vec3i;
 import net.minecraft.world.World;
 import net.minecraft.block.entity.LootableContainerBlockEntity;
 
@@ -29,13 +27,11 @@ public class BoxBlockEntity extends LootableContainerBlockEntity {
         @Override
         protected void onContainerOpen(World world, BlockPos pos, BlockState state) {
             BoxBlockEntity.this.playSound(state, SoundEvents.BLOCK_BARREL_OPEN);
-            BoxBlockEntity.this.setOpen(state, true);
         }
 
         @Override
         protected void onContainerClose(World world, BlockPos pos, BlockState state) {
             BoxBlockEntity.this.playSound(state, SoundEvents.BLOCK_BARREL_CLOSE);
-            BoxBlockEntity.this.setOpen(state, false);
         }
 
         @Override
@@ -117,10 +113,6 @@ public class BoxBlockEntity extends LootableContainerBlockEntity {
         if (!this.removed) {
             this.stateManager.updateViewerCount(this.getWorld(), this.getPos(), this.getCachedState());
         }
-    }
-
-    void setOpen(BlockState state, boolean open) {
-        this.world.setBlockState(this.getPos(), (BlockState)state.with(BarrelBlock.OPEN, open), Block.NOTIFY_ALL);
     }
 
     void playSound(BlockState state, SoundEvent soundEvent) {
