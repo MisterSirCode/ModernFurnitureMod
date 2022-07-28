@@ -7,6 +7,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.Material;
 import net.minecraft.block.AbstractBlock.Settings;
+import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
@@ -35,6 +36,7 @@ public class MFMUtils implements ModInitializer {
     };
 
     public static ArrayList<ArrayList<Block>> typeLists = new ArrayList<ArrayList<Block>>();
+    public static ArrayList<BlockEntityType<BoxBlockEntity>> BOX_ENTITY = new ArrayList<BlockEntityType<BoxBlockEntity>>();
 
     // Create Furniture
     static {
