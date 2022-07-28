@@ -37,21 +37,26 @@ public class MFMUtils implements ModInitializer {
     };
 
     public static ArrayList<ArrayList<Block>> typeLists = new ArrayList<ArrayList<Block>>();
-    //public static ArrayList<BlockEntityType<BoxBlockEntity>> BOX_ENTITY = new ArrayList<BlockEntityType<BoxBlockEntity>>();
     public static BlockEntityType<BoxBlockEntity> BOX_ENTITY;
 
     // Create Furniture
     static {
-        for (int i = 0; i < furnitures.length; i++) {
+        for (String type : furnitures) {
             ArrayList<Block> tempBlocks = new ArrayList<Block>();
-            for (int j = 0; j < vanillaLogs.length; j++) {
+            for (Block wb : woodBlocks) {
                 Block block;
-                Settings blockSettings = FabricBlockSettings.of(Material.WOOD, woodBlocks[j].getDefaultMapColor())
+                Settings blockSettings = FabricBlockSettings.of(Material.WOOD, wb.getDefaultMapColor())
                     .strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD).nonOpaque();
-                if (i == 0) block = new Table(blockSettings);
-                else if (i == 1) block = new Bench(blockSettings);
-                else if (i == 2) block = new Grate(blockSettings);
-                else block = new Box(blockSettings);
+                switch (type) {
+                    case "table":
+                        block = new Table(blockSettings);
+                    case "bench":
+                        block = new Bench(blockSettings);
+                    case "grate":
+                        block = new Grate(blockSettings);
+                    default: 
+                        block = new Box(blockSettings);
+                }
                 tempBlocks.add(block);
             }
             typeLists.add(tempBlocks);
@@ -65,7 +70,7 @@ public class MFMUtils implements ModInitializer {
     @Override
     public void onInitialize() {
         BOX_ENTITY = Registry.register(Registry.BLOCK_ENTITY_TYPE, "mfm_utils:box_block_entity", 
-            FabricBlockEntityTypeBuilder.create(BoxBlockEntity::new, typeLists.get(2).get(0)).build(null));
+            FabricBlockEntityTypeBuilder.create(BoxBlockEntity::new, typeLists.get(3).get(0)).build(null));
 
         // Add Furniture
         for (int i = 0; i < furnitures.length; i++) {
