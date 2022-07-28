@@ -48,14 +48,10 @@ public class MFMUtils implements ModInitializer {
                 Settings blockSettings = FabricBlockSettings.of(Material.WOOD, wb.getDefaultMapColor())
                     .strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD).nonOpaque();
                 switch (type) {
-                    case "table":
-                        block = new Table(blockSettings);
-                    case "bench":
-                        block = new Bench(blockSettings);
-                    case "grate":
-                        block = new Grate(blockSettings);
-                    default: 
-                        block = new Box(blockSettings);
+                    case "table" -> block = new Table(blockSettings);
+                    case "bench" -> block = new Bench(blockSettings);
+                    case "grate" -> block = new Grate(blockSettings);
+                    default -> block = new Box(blockSettings);
                 }
                 tempBlocks.add(block);
             }
