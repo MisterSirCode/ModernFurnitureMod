@@ -1,0 +1,14 @@
+{
+    "required": true,
+    "minVersion": "0.8",
+    "package": "net.scmods",
+    "compatibilityLevel": "JAVA_8",
+    "mixins": [],
+    "client": [
+        "PistonBaseBlockMixin"
+    ],
+    "server": [],
+    "injectors": {
+        "defaultRequire": 1
+    }
+}

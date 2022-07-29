@@ -23,6 +23,9 @@
       "net.scmods.MFMUtils"
     ]
   },
+  "mixins": [
+    "scm_mfmutils.mixins.json"
+  ],
   "depends": {
     "fabricloader": ">=0.14.6",
     "fabric": "*",
