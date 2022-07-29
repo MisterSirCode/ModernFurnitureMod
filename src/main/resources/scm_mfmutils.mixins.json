@@ -4,10 +4,10 @@
     "package": "net.scmods.mixins",
     "compatibilityLevel": "JAVA_8",
     "mixins": [],
-    "client": [
+    "client": [],
+    "server": [
         "PistonBaseBlockMixin"
     ],
-    "server": [],
     "injectors": {
         "defaultRequire": 1
     }
