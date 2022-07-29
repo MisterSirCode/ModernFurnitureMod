@@ -13,10 +13,12 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(PistonBlock.class)
 public class PistonBaseBlockMixin {
-    @Inject(method = "isMovable", at = @At(value = "INVOKE", shift = At.Shift.BEFORE, target = "Lnet/minecraft/block/AbstractBlock$AbstractBlockState;getHardness(Lnet/minecraft/world/BlockView;Lnet/minecraft/util/math/BlockPos;)F"), cancellable = true)
+    @Inject(method = "Lnet/minecraft/block/PistonBlock;isMovable(Lnet/minecraft/block/BlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/util/math/Direction;ZLnet/minecraft/util/math/Direction;)Z", 
+    at = @At(value = "INVOKE", shift = At.Shift.BEFORE, target = "Lnet/minecraft/block/AbstractBlock$AbstractBlockState;getHardness(Lnet/minecraft/world/BlockView;Lnet/minecraft/util/math/BlockPos;)F"), cancellable = true)
     private static void modifyMovable(BlockState state, World world, BlockPos pos, Direction direction, boolean canBreak, Direction pistonDir, CallbackInfoReturnable<Boolean> cir) {
         System.out.println("hi");
         if (state.getBlock() instanceof Box) {
+            System.out.println("yes, checks out");
             cir.setReturnValue(true);
         }
     }
