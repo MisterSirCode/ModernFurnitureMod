@@ -87,7 +87,7 @@ public class CrateBlockEntity extends LootableContainerBlockEntity {
 
     @Override
     protected Text getContainerName() {
-        return Text.translatable("container.mfm_utils.box");
+        return Text.translatable("container.mfm_utils.crate");
     }
 
     @Override
