@@ -15,6 +15,12 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
+import net.scmods.furniture.Bench;
+import net.scmods.furniture.Box;
+import net.scmods.furniture.BoxBlockEntity;
+import net.scmods.furniture.Grate;
+import net.scmods.furniture.Table;
+
 import java.util.ArrayList;
 
 public class MFMUtils implements ModInitializer {

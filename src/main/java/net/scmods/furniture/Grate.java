@@ -1,10 +1,11 @@
-package net.scmods;
+package net.scmods.furniture;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.ShapeContext;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
+import net.scmods.MostlyEmptyBlock;
 
 public class Grate extends MostlyEmptyBlock {
     protected final VoxelShape outlineShape = VoxelShapes.fullCube();

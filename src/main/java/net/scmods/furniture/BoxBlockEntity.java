@@ -1,4 +1,4 @@
-package net.scmods;
+package net.scmods.furniture;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.ViewerCountManager;
@@ -17,6 +17,7 @@ import net.minecraft.text.Text;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.scmods.MFMUtils;
 import net.minecraft.block.entity.LootableContainerBlockEntity;
 
 public class BoxBlockEntity extends LootableContainerBlockEntity {

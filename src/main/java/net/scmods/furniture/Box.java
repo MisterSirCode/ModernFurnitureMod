@@ -1,4 +1,4 @@
-package net.scmods;
+package net.scmods.furniture;
 
 import org.jetbrains.annotations.Nullable;
 

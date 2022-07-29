@@ -1,10 +1,11 @@
-package net.scmods;
+package net.scmods.furniture;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.ShapeContext;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
+import net.scmods.MostlyEmptyBlock;
 
 public class Bench extends MostlyEmptyBlock {
     protected final VoxelShape collisionShape = VoxelShapes.cuboid(0.125, 0, 0.125, 0.875, 0.5625, 0.875);
