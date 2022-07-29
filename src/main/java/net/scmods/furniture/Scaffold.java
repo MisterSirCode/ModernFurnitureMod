@@ -7,7 +7,7 @@ import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
 import net.scmods.MostlyEmptyBlock;
 
-public class Grate extends MostlyEmptyBlock {
+public class Scaffold extends MostlyEmptyBlock {
     protected final VoxelShape outlineShape = VoxelShapes.fullCube();
     protected final VoxelShape collisionShape = VoxelShapes.union(VoxelShapes.union(VoxelShapes.union(
         VoxelShapes.cuboid(0.875, 0, 0, 1, 1, 0.875), 
@@ -15,7 +15,7 @@ public class Grate extends MostlyEmptyBlock {
         VoxelShapes.cuboid(0, 0, 0.125, 0.125, 1, 1)), 
         VoxelShapes.cuboid(0, 0, 0, 0.875, 1, 0.125));
 
-    public Grate(Settings settings) {
+    public Scaffold(Settings settings) {
         super(settings);
     }
 

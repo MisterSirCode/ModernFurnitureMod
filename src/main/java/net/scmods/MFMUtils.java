@@ -16,9 +16,9 @@ import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import net.scmods.furniture.Bench;
-import net.scmods.furniture.Box;
-import net.scmods.furniture.BoxBlockEntity;
-import net.scmods.furniture.Grate;
+import net.scmods.furniture.Crate;
+import net.scmods.furniture.CrateBlockEntity;
+import net.scmods.furniture.Scaffold;
 import net.scmods.furniture.Table;
 
 import java.util.ArrayList;
@@ -39,11 +39,11 @@ public class MFMUtils implements ModInitializer {
     };
 
     public static final String furnitures[] = {
-        "table", "bench", "grate", "box"
+        "table", "bench", "scaffold", "crate"
     };
 
     public static ArrayList<ArrayList<Block>> typeLists = new ArrayList<ArrayList<Block>>();
-    public static BlockEntityType<BoxBlockEntity> BOX_ENTITY;
+    public static BlockEntityType<CrateBlockEntity> BOX_ENTITY;
 
     // Create Furniture
     static {
@@ -56,8 +56,8 @@ public class MFMUtils implements ModInitializer {
                 switch (type) {
                     case "table" -> block = new Table(blockSettings);
                     case "bench" -> block = new Bench(blockSettings);
-                    case "grate" -> block = new Grate(blockSettings);
-                    default -> block = new Box(blockSettings);
+                    case "scaffold" -> block = new Scaffold(blockSettings);
+                    default -> block = new Crate(blockSettings);
                 }
                 tempBlocks.add(block);
             }
@@ -71,8 +71,8 @@ public class MFMUtils implements ModInitializer {
 
     @Override
     public void onInitialize() {
-        BOX_ENTITY = Registry.register(Registry.BLOCK_ENTITY_TYPE, "mfm_utils:box_block_entity", 
-            FabricBlockEntityTypeBuilder.create(BoxBlockEntity::new, typeLists.get(3).get(0)).build(null));
+        BOX_ENTITY = Registry.register(Registry.BLOCK_ENTITY_TYPE, "mfm_utils:crate_block_entity",
+            FabricBlockEntityTypeBuilder.create(CrateBlockEntity::new, typeLists.get(3).get(0)).build(null));
 
         // Add Furniture
         for (int i = 0; i < furnitures.length; i++) {

@@ -26,10 +26,10 @@ import net.minecraft.world.World;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.server.world.ServerWorld;
 
-public class Box extends Block implements BlockEntityProvider {
+public class Crate extends Block implements BlockEntityProvider {
     protected final VoxelShape combinedShape = VoxelShapes.fullCube();
 
-    public Box(Settings settings) {
+    public Crate(Settings settings) {
         super(settings);
     }
 
@@ -49,8 +49,8 @@ public class Box extends Block implements BlockEntityProvider {
             return ActionResult.SUCCESS;
         }
         BlockEntity blockEntity = world.getBlockEntity(pos);
-        if (blockEntity instanceof BoxBlockEntity) {
-            player.openHandledScreen((BoxBlockEntity)blockEntity);
+        if (blockEntity instanceof CrateBlockEntity) {
+            player.openHandledScreen((CrateBlockEntity)blockEntity);
             PiglinBrain.onGuardedBlockInteracted(player, true);
         }
         return ActionResult.CONSUME;
@@ -72,15 +72,15 @@ public class Box extends Block implements BlockEntityProvider {
     @Override
     public void scheduledTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
         BlockEntity blockEntity = world.getBlockEntity(pos);
-        if (blockEntity instanceof BoxBlockEntity) {
-            ((BoxBlockEntity)blockEntity).tick();
+        if (blockEntity instanceof CrateBlockEntity) {
+            ((CrateBlockEntity)blockEntity).tick();
         }
     }
 
     @Override
     @Nullable
     public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
-        return new BoxBlockEntity(pos, state);
+        return new CrateBlockEntity(pos, state);
     }
 
     @Override
@@ -91,8 +91,8 @@ public class Box extends Block implements BlockEntityProvider {
     @Override
     public void onPlaced(World world, BlockPos pos, BlockState state, @Nullable LivingEntity placer, ItemStack itemStack) {
         BlockEntity blockEntity;
-        if (itemStack.hasCustomName() && (blockEntity = world.getBlockEntity(pos)) instanceof BoxBlockEntity) {
-            ((BoxBlockEntity)blockEntity).setCustomName(itemStack.getName());
+        if (itemStack.hasCustomName() && (blockEntity = world.getBlockEntity(pos)) instanceof CrateBlockEntity) {
+            ((CrateBlockEntity)blockEntity).setCustomName(itemStack.getName());
         }
     }
 

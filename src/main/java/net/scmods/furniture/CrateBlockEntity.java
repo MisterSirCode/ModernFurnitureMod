@@ -20,18 +20,18 @@ import net.minecraft.world.World;
 import net.scmods.MFMUtils;
 import net.minecraft.block.entity.LootableContainerBlockEntity;
 
-public class BoxBlockEntity extends LootableContainerBlockEntity {
+public class CrateBlockEntity extends LootableContainerBlockEntity {
     private DefaultedList<ItemStack> inventory = DefaultedList.ofSize(27, ItemStack.EMPTY);
 
     private ViewerCountManager stateManager = new ViewerCountManager() {
         @Override
         protected void onContainerOpen(World world, BlockPos pos, BlockState state) {
-            BoxBlockEntity.this.playSound(state, SoundEvents.BLOCK_BARREL_OPEN);
+            CrateBlockEntity.this.playSound(state, SoundEvents.BLOCK_BARREL_OPEN);
         }
 
         @Override
         protected void onContainerClose(World world, BlockPos pos, BlockState state) {
-            BoxBlockEntity.this.playSound(state, SoundEvents.BLOCK_BARREL_CLOSE);
+            CrateBlockEntity.this.playSound(state, SoundEvents.BLOCK_BARREL_CLOSE);
         }
 
         @Override
@@ -42,13 +42,13 @@ public class BoxBlockEntity extends LootableContainerBlockEntity {
         protected boolean isPlayerViewing(PlayerEntity player) {
             if (player.currentScreenHandler instanceof GenericContainerScreenHandler) {
                 Inventory inventory = ((GenericContainerScreenHandler)player.currentScreenHandler).getInventory();
-                return inventory == BoxBlockEntity.this;
+                return inventory == CrateBlockEntity.this;
             }
             return false;
         }
     };
 
-    public BoxBlockEntity(BlockPos pos, BlockState state) {
+    public CrateBlockEntity(BlockPos pos, BlockState state) {
         super(MFMUtils.BOX_ENTITY, pos, state);
     }
 
