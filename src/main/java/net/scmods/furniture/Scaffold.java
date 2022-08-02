@@ -5,7 +5,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
-import net.scmods.MostlyEmptyBlock;
+import net.scmods.utilities.MostlyEmptyBlock;
 
 public class Scaffold extends MostlyEmptyBlock {
     protected final VoxelShape outlineShape = VoxelShapes.fullCube();

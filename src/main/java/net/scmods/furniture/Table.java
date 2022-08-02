@@ -5,7 +5,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
-import net.scmods.MostlyEmptyBlock;
+import net.scmods.utilities.MostlyEmptyBlock;
 
 public class Table extends MostlyEmptyBlock {
     protected final VoxelShape combinedShape = VoxelShapes.union(VoxelShapes.union(VoxelShapes.union(VoxelShapes.union(

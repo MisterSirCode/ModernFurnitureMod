@@ -1,4 +1,4 @@
-package net.scmods;
+package net.scmods.utilities;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Waterloggable;

@@ -15,11 +15,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
-import net.scmods.furniture.Bench;
-import net.scmods.furniture.Crate;
-import net.scmods.furniture.CrateBlockEntity;
-import net.scmods.furniture.Scaffold;
-import net.scmods.furniture.Table;
+import net.scmods.furniture.*;
 
 import java.util.ArrayList;
 
@@ -39,7 +35,7 @@ public class MFMUtils implements ModInitializer {
     };
 
     public static final String furnitures[] = {
-        "table", "bench", "scaffold", "crate"
+        "table", "bench", "scaffold", "crate", "fence"
     };
 
     public static ArrayList<ArrayList<Block>> typeLists = new ArrayList<ArrayList<Block>>();
@@ -57,7 +53,8 @@ public class MFMUtils implements ModInitializer {
                     case "table" -> block = new Table(blockSettings);
                     case "bench" -> block = new Bench(blockSettings);
                     case "scaffold" -> block = new Scaffold(blockSettings);
-                    default -> block = new Crate(blockSettings);
+                    case "crate" -> block = new Crate(blockSettings);
+                    default -> block = new Fence(blockSettings);
                 }
                 tempBlocks.add(block);
             }
