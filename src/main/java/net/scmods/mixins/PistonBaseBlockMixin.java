@@ -16,9 +16,7 @@ public class PistonBaseBlockMixin {
     @Inject(method = "isMovable",
     at = @At(value = "INVOKE", shift = At.Shift.BEFORE, target = "Lnet/minecraft/block/BlockState;getHardness(Lnet/minecraft/world/BlockView;Lnet/minecraft/util/math/BlockPos;)F"), cancellable = true)
     private static void modifyMovable(BlockState state, World world, BlockPos pos, Direction direction, boolean canBreak, Direction pistonDir, CallbackInfoReturnable<Boolean> cir) {
-        System.out.println("hi");
         if (state.getBlock() instanceof Crate) {
-            System.out.println("yes, checks out");
             cir.setReturnValue(true);
         }
     }
