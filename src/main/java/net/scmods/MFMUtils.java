@@ -20,6 +20,8 @@ import net.scmods.furniture.*;
 import java.util.ArrayList;
 
 public class MFMUtils implements ModInitializer {
+    public static final String MODID = "mfmutils";
+    
     public static final String vanillaLogs[] = {
         "oak", "birch", "spruce", "jungle", "dark_oak", "acacia", "mangrove", "warped", "crimson", 
         "stripped_oak", "stripped_birch", "stripped_spruce", "stripped_jungle", "stripped_dark_oak",
@@ -62,13 +64,13 @@ public class MFMUtils implements ModInitializer {
         }
     }
 
-    public static final ItemGroup MFM_GROUP = FabricItemGroupBuilder.create(new Identifier("mfm_utils", "mfmitemgroup"))
+    public static final ItemGroup MFM_GROUP = FabricItemGroupBuilder.create(new Identifier(MODID, "mfmitemgroup"))
         .icon(() -> new ItemStack(typeLists.get(0).get(6)))
         .build();
 
     @Override
     public void onInitialize() {
-        BOX_ENTITY = Registry.register(Registry.BLOCK_ENTITY_TYPE, "mfm_utils:crate_block_entity",
+        BOX_ENTITY = Registry.register(Registry.BLOCK_ENTITY_TYPE, MODID + ":crate_block_entity",
             FabricBlockEntityTypeBuilder.create(CrateBlockEntity::new, typeLists.get(3).get(0)).build(null));
 
         // Add Furniture
@@ -76,8 +78,8 @@ public class MFMUtils implements ModInitializer {
             ArrayList<Block> tempBlocks = typeLists.get(i);
             for (int j = 0; j < vanillaLogs.length; j++) {
                 String currentName = vanillaLogs[j] + "_" + furnitures[i];
-                Registry.register(Registry.BLOCK, new Identifier("mfm_utils", currentName), tempBlocks.get(j));
-                Registry.register(Registry.ITEM, new Identifier("mfm_utils", currentName), 
+                Registry.register(Registry.BLOCK, new Identifier(MODID, currentName), tempBlocks.get(j));
+                Registry.register(Registry.ITEM, new Identifier(MODID, currentName),
                     new BlockItem(tempBlocks.get(j), new FabricItemSettings().group(MFM_GROUP)));
             }
         }
