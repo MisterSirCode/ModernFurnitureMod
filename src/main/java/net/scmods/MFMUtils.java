@@ -22,13 +22,13 @@ import java.util.ArrayList;
 public class MFMUtils implements ModInitializer {
     public static final String MODID = "mfmutils";
 
-    public static final String vanillaLogs[] = {
+    public static final String[] vanillaLogs = {
         "oak", "birch", "spruce", "jungle", "dark_oak", "acacia", "mangrove", "warped", "crimson", 
         "stripped_oak", "stripped_birch", "stripped_spruce", "stripped_jungle", "stripped_dark_oak",
         "stripped_acacia", "stripped_mangrove", "stripped_warped", "stripped_crimson"
     };
 
-    public static final Block woodBlocks[] = {
+    public static final Block[] woodBlocks = {
         Blocks.OAK_LOG, Blocks.BIRCH_LOG, Blocks.SPRUCE_LOG, Blocks.JUNGLE_LOG, Blocks.DARK_OAK_LOG, 
         Blocks.ACACIA_LOG, Blocks.MANGROVE_LOG, Blocks.WARPED_STEM, Blocks.CRIMSON_STEM, 
         Blocks.STRIPPED_OAK_LOG, Blocks.STRIPPED_BIRCH_LOG, Blocks.STRIPPED_SPRUCE_LOG, 
@@ -36,17 +36,17 @@ public class MFMUtils implements ModInitializer {
         Blocks.STRIPPED_MANGROVE_LOG, Blocks.STRIPPED_WARPED_STEM, Blocks.STRIPPED_CRIMSON_STEM
     };
 
-    public static final String furnitures[] = {
-        "table", "bench", "scaffold", "crate", "fence"
+    public static final String[] furnitures = {
+        "table", "bench", "scaffold", "crate"
     };
 
-    public static ArrayList<ArrayList<Block>> typeLists = new ArrayList<ArrayList<Block>>();
+    public static ArrayList<ArrayList<Block>> typeLists = new ArrayList<>();
     public static BlockEntityType<CrateBlockEntity> BOX_ENTITY;
 
     // Create Furniture
     static {
         for (String type : furnitures) {
-            ArrayList<Block> tempBlocks = new ArrayList<Block>();
+            ArrayList<Block> tempBlocks = new ArrayList<>();
             for (Block wb : woodBlocks) {
                 Block block;
                 Settings blockSettings = FabricBlockSettings.of(Material.WOOD, wb.getDefaultMapColor())
@@ -55,8 +55,7 @@ public class MFMUtils implements ModInitializer {
                     case "table" -> block = new Table(blockSettings);
                     case "bench" -> block = new Bench(blockSettings);
                     case "scaffold" -> block = new Scaffold(blockSettings);
-                    case "crate" -> block = new Crate(blockSettings);
-                    default -> block = new Fence(blockSettings);
+                    default -> block = new Crate(blockSettings);
                 }
                 tempBlocks.add(block);
             }
