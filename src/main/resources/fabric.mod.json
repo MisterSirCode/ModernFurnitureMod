@@ -3,7 +3,7 @@
   "id": "scmfmutils",
   "version": "1.5.0",
 
-  "name": "MFM Utils",
+  "name": "Modern Furniture Mod",
   "description": "Simple furniture mod I wanted to make out of boredom",
   "authors": [
     "SirCode"
@@ -15,7 +15,7 @@
   },
 
   "license": "CC0-1.0",
-  "icon": "assets/scmmfmutils/icon.png",
+  "icon": "assets/scmfmutils/icon.png",
 
   "environment": "*",
   "entrypoints": {
@@ -24,7 +24,7 @@
     ]
   },
   "mixins": [
-    "scm_mfmutils.mixins.json"
+    "scmfmutils.mixins.json"
   ],
   "depends": {
     "fabricloader": ">=0.14.6",
