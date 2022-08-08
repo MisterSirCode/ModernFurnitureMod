@@ -21,7 +21,7 @@ import java.util.ArrayList;
 
 public class MFMUtils implements ModInitializer {
     public static final String MODID = "mfmutils";
-    
+
     public static final String vanillaLogs[] = {
         "oak", "birch", "spruce", "jungle", "dark_oak", "acacia", "mangrove", "warped", "crimson", 
         "stripped_oak", "stripped_birch", "stripped_spruce", "stripped_jungle", "stripped_dark_oak",
